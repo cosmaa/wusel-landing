@@ -17,7 +17,7 @@ jobs:
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
-      run: docker build -t wusel-landing
+      run: docker build . -t wusel-landing
     - name: Tags
       run: |
           docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
