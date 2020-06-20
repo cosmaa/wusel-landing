@@ -13,6 +13,9 @@ WORKDIR /wusel_landing
 RUN pip install -r requirements.txt
 
 COPY . /wusel_landing
+
+EXPOSE 3000
+
 ENTRYPOINT ["python"]
 
 CMD [ "app.py" ]
