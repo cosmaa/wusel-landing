@@ -24,7 +24,7 @@ jobs:
           docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
           docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:latest
     - name: Push
-        run: |
+      run: |
           docker push ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USER }}/wusel-landing:latest
 
