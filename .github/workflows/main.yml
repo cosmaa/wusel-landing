@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: deploy to virtual privat server
-      run: |
+      run:
           echo "connected"
           sudo mkdir ~/ wusel
 
