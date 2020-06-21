@@ -34,22 +34,12 @@ jobs:
 
       steps:
       - uses: actions/checkout@v2
-      - name: docker prune the running container
-        uses: fifsky/ssh-action@master
-        with:
-          command: |
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker rm $(sudo docker ps -a -q)
-          host: ${{ secrets.REMOTE_HOST }}
-          user: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.WUSEL_SERCRET }}
-          pass: ${{ secrets.REMOTE_PASSWORD}}
       - name: run wusel-landing image
         uses: fifsky/ssh-action@master
         with:
           command: |
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker rm $(sudo docker ps -a -q)
+            sudo docker container prune -y
             sudo docker pull ${{ secrets.DOCKER_USER }}/wusel-landing:latest
             sudo docker run -d -p 3000:5000 wuselstani/wusel-landing
           host: ${{ secrets.REMOTE_HOST }}
