@@ -39,7 +39,7 @@ jobs:
         with:
           command: |
             sudo docker ps -a
-            sudo docker build ${{ secrets.DOCKER_USER }}/wusel-landing:lates
+            sudo docker pull ${{ secrets.DOCKER_USER }}/wusel-landing:latest
           host: ${{ secrets.REMOTE_HOST }}
           user: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.WUSEL_SERCRET }}
