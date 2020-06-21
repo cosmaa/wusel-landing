@@ -35,4 +35,6 @@ jobs:
           REMOTE_PATH: "/home/debian/wusel/wusel-landing"
       run: |
           echo $REMOTE_PASSWORD | sudo ssh $REMOTE_USER@$REMOTE_HOST 'bash -s'
+          echo "connected"
+
           sudo mkdir ~/ wusel
