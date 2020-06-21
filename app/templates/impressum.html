@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class='impressum'><h1>Impressum</h1>
+<div class='impressum' style="margin: 10px"><h1>Impressum</h1>
     <p>Angaben gemäß § 5 TMG</p>
     <p>Constanze Maaß<br>
         Woltmanstraße 16<br>
@@ -8,7 +8,8 @@
     </p>
     <p><strong>Kontakt:</strong> <br>
         Telefon: 00172-9718209<br>
-        E-Mail: <a href='stani@wusel.space'>stani@wusel.space</a></br></p>
+        E-Mail: <a href='stani@wusel.space'>stani@wusel.space</a>
+        <br></p>
 
     <p><strong>Haftungsausschluss: </strong><br><br><strong>Haftung für Inhalte</strong><br><br>
         Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
@@ -45,7 +46,7 @@
 </div>
     <div class="border-top pt-3">
     <small class="text-muted">
-        OKAY? <a class="ml-2" href="{{ url_for('index') }}">go back</a>
+        OKAY? <a class="ml-2" href="{{ url_for('hello') }}">zurück</a>
     </small>
     </div>
 
