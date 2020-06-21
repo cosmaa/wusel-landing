@@ -16,18 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: testing connection
-      uses: appleboy/ssh-action@master
+      uses: fifsky/ssh-action@master
       with:
+        command: |
+          cd /tmp
+          ls -a
         host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
+        user: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.WUSEL_SERCRET }}
-        port: 22
-        script: |
-          mkdir wusel-landing
-          cd wusel-landing
-          touch hello.txt
-
-
+        pass: ${{ secrets.REMOTE_PASSWORD}}
   
 
   ci:
