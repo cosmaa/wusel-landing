@@ -16,7 +16,6 @@ jobs:
     steps:
     - uses: appleboy/ssh-action@master
     - name: testing connection
-      run: docker build . -t wusel-landing
       with:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
