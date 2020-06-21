@@ -10,10 +10,13 @@ jobs:
 
   cd:
     name: Deploy
+
     runs-on: ubuntu-latest
+
     steps:
+    - uses: actions/checkout@v2
     - name: testing connection
-    - uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@master
       run: docker build . -t wusel-landing
       with:
         host: ${{ secrets.REMOTE_HOST }}
