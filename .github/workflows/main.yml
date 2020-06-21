@@ -8,9 +8,27 @@ on:
 
 jobs:
 
-  cd:
-    name: Deploy
+  ci:
+    name: Integration
+    runs-on: ubuntu-latest
 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Build the Docker image
+      run: docker build . -t wusel-landing
+    - name: add tags
+      run: |
+          docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
+          docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:latest
+    - name: push to docker
+      run: |
+          docker push ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USER }}/wusel-landing:latest
+
+cd:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -19,32 +37,9 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         command: |
-          cd /tmp
-          ls -a
+          sudo docker ps -
         host: ${{ secrets.REMOTE_HOST }}
         user: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.WUSEL_SERCRET }}
         pass: ${{ secrets.REMOTE_PASSWORD}}
-  
-
-  ci:
-
-    runs-on: ubuntu-latest
-
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker login
-      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-    - name: Build the Docker image
-      run: docker build . -t wusel-landing
-    - name: Tags
-      run: |
-          docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
-          docker tag wusel-landing ${{ secrets.DOCKER_USER }}/wusel-landing:latest
-    - name: Push
-      run: |
-          docker push ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USER }}/wusel-landing:latest
-
   
