@@ -26,10 +26,10 @@ jobs:
       run: |
           docker push ${{ secrets.DOCKER_USER }}/wusel-landing:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USER }}/wusel-landing:latest
-    - name: deploy
-        id: funny-deploy
-        uses: BoatNg/funny-deploy@master
-        env:
+    - name: deploy to virtual privat server
+      id: funny-deploy
+      uses: BoatNg/funny-deploy@master
+      env:
           REMOTE_HOST: "${{ secrets.REMOTE_HOST }}"
           REMOTE_USER: "${{ secrets.REMOTE_USER }}"
           REMOTE_PASSWORD: "${{ secrets.REMOTE_PASSWORD }}"
