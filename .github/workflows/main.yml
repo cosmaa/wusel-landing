@@ -34,13 +34,10 @@ jobs:
 
       steps:
       - uses: actions/checkout@v2
-      - env:
-          DOOF: "hallo doof"
       - name: docker prune the running container
         uses: fifsky/ssh-action@master
         with:
           command: |
-            echo $DOOF
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker rm $(sudo docker ps -a -q)
           host: ${{ secrets.REMOTE_HOST }}
