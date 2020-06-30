@@ -4,9 +4,9 @@ from app import app
 
 @app.route('/')
 def hello():
-    return render_template('hello.html', title='space')
+    return render_template('pages/hello.html', title='space')
 
 
 @app.route('/impressum')
 def impressum():
-    return render_template('impressum.html', title='impressum')
+    return render_template('pages/impressum.html', title='impressum')

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-{% include 'head.html' %}
+{% include 'includes/head.html' %}
 <body class="page">
-{% include 'background.html' %}
-{% include 'header.html' %}
-<div class="container" id="ctner">
+{% include 'includes/background.html' %}
+{% include 'includes/header.html' %}
+<div class="container" >
     {% block content %}{% endblock %}
 </div>
 
@@ -18,7 +18,20 @@
         position: fixed;
         text-align: center;
         line-height: 1.2;
-        background-color: black
+        background-color: black;
+        font-family: "Fira Code",
+        "Source Code Pro",
+        "Fira Code Online",
+        "Source-Han-Sans-Medium",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Heiti SC",
+        "Microsoft YaHei",
+        "WenQuanYi Micro Hei",
+        Helvetica,
+        Tahoma,
+        "Ubuntu Condensed",
+        sans-serif;
     }
 
 
@@ -39,8 +52,10 @@
 
     .content {
         position: relative;
+        text-align: left;
         margin: 10px;
         padding: 20px;
+        padding-top: 0 ;
         border: 1px solid greenyellow;
         color: #dddddd;
     }
@@ -52,7 +67,58 @@
         text-align: left;
         position: absolute;
     }
+ div.header {
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        top:10px;
+        height: 40px;
+        width: 84%;
+        max-width: 1240px;
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.72);
+        border: 1px solid #990096;
+    }
 
+    ul {
+        padding: 10px;
+        margin: 0;
+        font-size: 88%;
+    }
+
+    .nav_bar {
+        text-align: center;
+        display: block;
+        list-style: none;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    a.header_btn {
+        display: inline-block;
+
+    }
+
+    p.btn_text {
+        font-style: normal;
+        margin: 0;
+        color: #990096;
+        display: inline-block;
+        text-transform: capitalize;
+
+    }
+
+    .btn_text:hover {
+        font-weight: 400;
+        color: blueviolet;
+        text-decoration: underline;
+    }
     /* width */
     ::-webkit-scrollbar {
         width: 4px;
@@ -60,7 +126,7 @@
 
     /* Track */
     ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey;
+        box-shadow: inset 0 0 5px aquamarine;
         border-radius: 5px;
     }
 
