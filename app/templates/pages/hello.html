@@ -1,6 +1,22 @@
 {% extends 'layout.html' %}
 {% block content %}
     <div class="content">
-        <h1 >Hallo</h1>
+        <h1>Welcome<span id="name"></span>, to the <span style="color: #990096">SPACE</span> of WUSEL</h1>
+
+            Name: <input type="text" id="fname"><input type="button" onclick="validateForm()" value="Submit">
+
     </div>
+ <script>
+        function validateForm() {
+            var x = document.getElementById("fname").value;
+            console.info("value ",x)
+
+            if (x == "") {
+                alert("say your name, say your name!");
+                return false;
+            }else {
+                return document.getElementById("name").innerHTML = " "+ x;
+            }
+        }
+    </script>
 {% endblock %}

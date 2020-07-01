@@ -10,3 +10,8 @@ def hello():
 @app.route('/impressum')
 def impressum():
     return render_template('pages/impressum.html', title='impressum')
+
+
+@app.route("/wishes")
+def wishes():
+    return render_template('pages/wish-list.html', title='wish-list')

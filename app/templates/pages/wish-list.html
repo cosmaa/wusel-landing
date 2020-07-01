@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="content">
+        <h1>Wishlist</h1>
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">make "WUSEL" wuselig</a></li>
+  <li><a href="#">mark in Navbar the current displayed Content</a></li>
+  <li><a href="#">manage Session for saving visitor-name</a></li>
+  <li><a href="#">saving and display visitors who enter their name</a></li>
+  <li><a href="#">Display Wishlist as Cards</a></li>
+  <li><a href="#">load Wishlist from database</a></li>
+  <li><a href="#">&#128034; database backup </a></li>
+  <li><a href="#"> &#128373;&#127999; security</a></li>
+  <li><a href="#">Handel todo is "done" with date</a></li>
+  <li><a href="#">add to done-Cards the picture of "how-to"</a></li>
+  <li><a href="#">add graph database</a></li>
+  <li><a href="#">implement like button for prioritize the Wishes </a></li>
+  <li><a href="#">create Wishlist for Visitors</a></li>
+  <li><a href="#">create comment-space for implementation-hints and orthography-hints &#128540; </a></li>
+  <li><a href="#">add authorization to change the status from cards</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+
+    </div>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: 12px; /* Prevent double borders */
+  background-color: none;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #dddddd;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #990096;
+    }
+</style>
+
+{% endblock %}
