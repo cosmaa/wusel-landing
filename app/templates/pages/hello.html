@@ -1,22 +1,33 @@
 {% extends 'layout.html' %}
 {% block content %}
     <div class="content">
-        <h1>Welcome<span id="name"></span>, to the <span style="color: #990096">SPACE</span> of WUSEL</h1>
+        <h1>Welcome<span class="rainbow" id="name"></span>, to <span class="rainbow">WUSEL.SPACE</span>
+        </h1>
 
-            Name: <input type="text" id="fname"><input type="button" onclick="validateForm()" value="Submit">
+        Name: <input type="text" id="fname"><input type="button" onclick="validateForm()" value="Submit">
 
     </div>
- <script>
+    <script>
         function validateForm() {
             var x = document.getElementById("fname").value;
-            console.info("value ",x)
+            console.info("value ", x)
 
             if (x == "") {
                 alert("say your name, say your name!");
                 return false;
-            }else {
-                return document.getElementById("name").innerHTML = " "+ x;
+            } else {
+                return document.getElementById("name").innerHTML = " " + x;
             }
         }
     </script>
+    <style>
+
+     .rainbow {
+            background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+            background-image: gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    </style>
 {% endblock %}
