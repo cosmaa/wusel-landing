@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 
 COPY . /wusel_landing
 
-EXPOSE 3000
+EXPOSE 5000
 
 ENTRYPOINT ["python"]
 

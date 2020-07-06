@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  wusel-landing:
+     image: wuselstani/wusel-landing:latest
+     restart: unless-stopped
+     networks:
+       - web
+       - default
+     labels:
+       - "traefik.enable=true"
+       - "traefik.port=5000"
+       - "traefik.http.routers.wusel_landing.rule=Host(`wusel.space`)"
+       - "traefik.http.routers.wusel_landing.entrypoints=web"
+       - "traefik.http.routers.wusel_landing.middlewares=https-redirect@docker"
+       - "traefik.http.routers.wusel_landing-https.rule=Host(`wusel.space`)"
+       - "traefik.http.routers.wusel_landing-https.entrypoints=websecure"
+       - "traefik.http.routers.wusel_landing-https.tls=true"
+       - "traefik.http.routers.wusel_landing-https.tls.certresolver=le"
+
+networks:
+  web:
+    external:
+      name: web
+  default:
