@@ -1,7 +1,7 @@
 import os
 from flask import render_template, send_from_directory, jsonify
 
-from app import app, TODO
+from app import app, TASKS
 
 
 @app.route('/')
@@ -15,15 +15,15 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
-@app.route('/ping', methods=['GET'])
+@app.route('/api/ping', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
 
 
-@app.route('/todos', methods=['GET'])
+@app.route('/api/tasks', methods=['GET'])
 def all_todos():
 
     return jsonify({
         'status': 'success',
-        'todos': TODO
+        'tasks': TASKS['tasks']
     })

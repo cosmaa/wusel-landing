@@ -1,133 +1,133 @@
 {
-  "todos": [
+  "tasks": [
     {
 
-      "todo": "make hello wuselig",
+      "task": "make hello wuselig",
       "status": "done",
       "date": "10.06.2020"
     },
     {
-      "todo": "make wusel-color selectable",
+      "task": "make wusel-color selectable",
       "status": "",
       "date": ""
     },
     {
-      "todo": "mark in Navbar the current displayed Content",
+      "task": "mark in Navbar the current displayed Content",
       "status": "",
       "date": ""
     },
     {
-      "todo": "manage Session for saving visitor-name",
+      "task": "manage Session for saving visitor-name",
       "status": "",
       "date": ""
     },
     {
-      "todo": "saving and display visitors who enter their name",
+      "task": "saving and display visitors who enter their name",
       "status": "",
       "date": ""
     },
     {
-      "todo": "create sidebar for displaying todo tasks",
+      "task": "create sidebar for displaying task tasks",
       "status": "active",
       "date": ""
     },
     {
-      "todo": "currently fulfilling \"todo\"",
+      "task": "currently fulfilling \"task\"",
       "status": "",
       "date": ""
     },
     {
-      "todo": "Display todolist as Cards",
+      "task": "Display tasklist as Cards",
       "status": "done",
       "date": ""
     },
     {
-      "todo": "load todolist from database",
+      "task": "load tasklist from database",
       "status": "",
       "date": ""
     },
     {
-      "todo": "add Bachelor-area",
+      "task": "add Bachelor-area",
       "status": "done",
       "date": ""
     },
     {
-      "todo": "add Bachelor_todos",
+      "task": "add Bachelor_tasks",
       "status": "",
       "date": ""
     },
     {
-      "todo": "database backup ",
+      "task": "database backup ",
       "status": "",
       "date": ""
     },
     {
-      "todo": "make deployment with github and portainer API ",
+      "task": "make deployment with github and portainer API ",
       "status": "",
       "date": ""
     },
     {
-      "todo": " security",
+      "task": " security",
       "status": "done",
       "date": ""
     },
     {
-      "todo": " deployment",
+      "task": " deployment",
       "status": "done",
       "date": ""
     },
     {
-      "todo": "Frontend with Vue",
+      "task": "Frontend with Vue",
       "status": "done",
       "date": ""
     },
     {
-      "todo": "Handel todo is \"done\"",
+      "task": "Handel task is \"done\"",
       "status": "done",
       "date": ""
     },
     {
-      "todo": "add to done-Cards the picture of \"how-to\"",
+      "task": "add to done-Cards the picture of \"how-to\"",
       "status": "",
       "date": ""
     },
     {
-      "todo": "add graph database (neo4j)",
+      "task": "add graph database (neo4j)",
       "status": "",
       "date": ""
     },
     {
-      "todo": "implement like button for prioritize the todoes ",
+      "task": "implement like button for prioritize the taskes ",
       "status": "",
       "date": ""
     },
     {
-      "todo": "create todolist for Visitors",
+      "task": "create tasklist for Visitors",
       "status": "",
       "date": ""
     },
     {
-      "todo": "create comment-space for implementation-hints and orthography-hints ",
+      "task": "create comment-space for implementation-hints and orthography-hints ",
       "status": "",
       "date": ""
     },
     {
-      "todo": "add authorization to change the status from cards",
+      "task": "add authorization to change the status from cards",
       "status": "",
       "date": ""
     },
     {
-      "todo": "add footer for impressum",
+      "task": "add footer for impressum",
       "status": "",
       "date": ""
     },
     {
-      "todo": "add Maximal todolist item size",
+      "task": "add Maximal tasklist item size",
       "status": "",
       "date": ""
     },
     {
-      "todo": "add todolist Backlog ",
+      "task": "add tasklist Backlog ",
       "status": "",
       "date": ""
     }
