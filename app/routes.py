@@ -21,9 +21,13 @@ def ping_pong():
 
 
 @app.route('/api/tasks', methods=['GET'])
-def all_todos():
-
+def all_tasks():
     return jsonify({
         'status': 'success',
         'tasks': TASKS['tasks']
     })
+
+
+@app.route('/api/projects', methods=['GET'])
+def all_projects():
+    return jsonify('Project')

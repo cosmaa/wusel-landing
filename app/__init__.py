@@ -14,3 +14,4 @@ app = Flask(__name__, static_folder='static')
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 from app import routes
+from app import neo4j
