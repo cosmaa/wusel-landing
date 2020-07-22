@@ -1,16 +1,14 @@
-FROM ubuntu:16.04
+FROM python:3
 
 MAINTAINER stani
 
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
-
+WORKDIR /wusel_landing
 # We copy just the requirements.txt first to leverage Docker cache
 COPY ./requirements.txt /wusel_landing/requirements.txt
 
-WORKDIR /wusel_landing
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-RUN pip install -r requirements.txt
 
 COPY . /wusel_landing
 
