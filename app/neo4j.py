@@ -13,6 +13,7 @@ password = os.getenv("NEO4J_PASSWORD")
 driver = GraphDatabase.driver(url, auth=basic_auth("neo4j", password), encrypted=False)
 
 
+
 def get_db():
     if not hasattr(g, 'neo4j_db'):
         g.neo4j_db = driver.session()
